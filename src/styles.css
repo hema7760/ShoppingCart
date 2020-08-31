@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+input {
+    border-top-style: hidden !important;
+    border-right-style: hidden !important;
+    border-left-style: hidden !important;
+    border-bottom-style: groove;
+    border-bottom: 1px solid #e48007e6 !important;
+  }
+  a{
+    color:black !important;
+  }
+  p{
+    font-size: small;
+    color: grey;
+  }

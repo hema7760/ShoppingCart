@@ -1,0 +1,30 @@
+<div class="row" style="padding-top:20px;">
+    <app-filter-section class="col-3"></app-filter-section>
+    <div class="col-9 row">
+        <div *ngIf="emptyList" class="container" style="text-align:center;">No Records Found</div>
+        <div *ngFor="let item of itemList | paginate: { itemsPerPage: 6, currentPage: p } |  filter:searchText" class="col-4" style="height:250px;">
+            <img src="assets/images/{{item.image}}" style="width:inherit;" height="150px"/>
+            <div class="row d-flex justify-content-between">
+                <div  style="height: 45px;padding-left:15px;">
+                     <a routerLink="/itemDetail/{{item.id}}">{{item.title}}</a>
+                     <p>{{item.type}}</p>
+                </div>
+                <div style="padding-right:15px;">
+                   ${{item.price}}
+               </div>
+            </div>
+            <div class="row d-flex justify-content-between">
+                <ul  class="rating-list">
+                    <li *ngFor="let star of stars" [ngClass]="{'selected': (star <= item.rating)}">
+                        <i  class="fa fa-star"></i>
+                    </li>
+                </ul>
+                <a (click)="addToCart(item.id)" style="padding-right:15px;">
+                    <i  class="fa fa-cart-plus"></i>
+                </a>
+            </div>
+        </div>
+       
+    </div>
+    <pagination-controls class="row" style="margin-left: 40%;" (pageChange)="p = $event"></pagination-controls>
+</div>

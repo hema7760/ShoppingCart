@@ -1,0 +1,15 @@
+.rating-list {
+    display: inline-block;
+    list-style: none;
+    padding-left: 15px;
+  }
+  .rating-list li {
+    float: right;
+    color: #ddd;
+    padding-left:0px;
+  }
+
+  .rating-list li.selected {
+    float: right;
+    color: #ffd700;
+  }

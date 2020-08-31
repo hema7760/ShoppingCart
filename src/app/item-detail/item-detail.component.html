@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-6 row">
+      <ul style="list-style:none;">
+        <li *ngFor="let imgSrc of itemObj.imageList">
+          <img src="assets/images/{{imgSrc}}" width="30px" (click)="showExpandedImage(imgSrc)" height="30px" style="padding-bottom:5px;"/>
+        </li>
+      </ul>
+      <img src="assets/images/{{showImage}}" height="250px;" style="margin-left:20%;width: 60%;"/>
+    </div>
+    <div class="col-4">
+        <strong>{{itemObj.brand}}</strong>
+        <h4>{{itemObj.title}}</h4>
+        <p>{{itemObj.description}}</p>
+        <p>color <span ><i class="fa fa-check-circle" [ngStyle]="{'color':itemObj.color}" aria-hidden="true"></i></span></p>
+        
+        <div class="row">
+          <div class="col-7">
+            <h3>Price per Unit</h3>
+            <strong>${{itemObj.price}}</strong>
+          </div>
+          <div class="col-5" style="margin-top: 15px;">
+            <button class="btn btn-default " style="background-color: darkslategray;color:whitesmoke">BUY NOW</button>
+            
+              <a (click)="addToCart(itemObj.id)"  style="padding-left:15px;cursor: pointer;">
+                <i  class="fa fa-cart-plus fa-lg"></i>
+              </a>
+            
+          </div>
+      </div>
+    </div>
+</div>
