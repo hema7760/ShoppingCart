@@ -41,9 +41,9 @@ export class FilterSectionComponent implements OnInit {
   filterList(filterForm) {
     let itemList = this.myService.itemList;
 
-    if (filterForm.collectionValue.value != '') {
+    if (filterForm.collection.value != '') {
        itemList =  itemList.filter(item => {
-        return item.brand == filterForm.collectionValue.value;
+        return item.brand == filterForm.collection.value;
        });
       }
     if (filterForm.category.value != '') {
